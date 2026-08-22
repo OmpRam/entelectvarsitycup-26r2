@@ -1,0 +1,586 @@
+{
+  "actions": [
+    {
+      "type": "travel",
+      "destination": "N1"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "iron-fittings",
+      "quantity": 1
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "iron-fittings",
+      "quantity": 1
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "iron-fittings",
+      "quantity": 1
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "iron-fittings",
+      "quantity": 1
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "planks",
+      "quantity": 2
+    },
+    {
+      "type": "travel",
+      "destination": "N23"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "rope",
+      "quantity": 2
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "boots",
+      "quantity": 1
+    },
+    {
+      "type": "craft",
+      "item": "pickaxe",
+      "quantity": 1
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "planks",
+      "quantity": 3
+    },
+    {
+      "type": "travel",
+      "destination": "N26"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "thatch",
+      "quantity": 2
+    },
+    {
+      "type": "build",
+      "upgrade": "farmhouse"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "planks",
+      "quantity": 4
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "Zaun"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N26"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "Targon"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "stone-blocks",
+      "quantity": 3
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "Borealis"
+    },
+    {
+      "type": "build",
+      "upgrade": "quarry"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "rope",
+      "quantity": 2
+    },
+    {
+      "type": "travel",
+      "destination": "Karthus"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "Lumenvale"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "planks",
+      "quantity": 4
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N23"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "craft",
+      "item": "rope",
+      "quantity": 1
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N27"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N25"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "N13"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "travel",
+      "destination": "Demacia"
+    },
+    {
+      "type": "sell",
+      "item": "ore",
+      "quantity": 7
+    },
+    {
+      "type": "sell",
+      "item": "wood",
+      "quantity": 962
+    },
+    {
+      "type": "sell",
+      "item": "sheep",
+      "quantity": 1869
+    },
+    {
+      "type": "sell",
+      "item": "wheat",
+      "quantity": 1935
+    },
+    {
+      "type": "sell",
+      "item": "stone",
+      "quantity": 1734
+    },
+    {
+      "type": "sell",
+      "item": "clay",
+      "quantity": 774
+    },
+    {
+      "type": "sell",
+      "item": "fish",
+      "quantity": 1890
+    }
+  ]
+}
