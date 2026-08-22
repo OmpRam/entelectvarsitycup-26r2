@@ -2,15 +2,33 @@
   "actions": [
     {
       "type": "travel",
-      "destination": "N3"
+      "destination": "Noxus"
     },
     {
       "type": "travel",
-      "destination": "N6"
+      "destination": "Freljord"
     },
     {
       "type": "travel",
-      "destination": "N1"
+      "destination": "N7"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
     },
     {
       "type": "gather"
@@ -1481,16 +1499,12 @@
     },
     {
       "type": "travel",
-      "destination": "N2"
-    },
-    {
-      "type": "travel",
-      "destination": "Piltover"
+      "destination": "Freljord"
     },
     {
       "type": "sell",
-      "item": "sheep",
-      "quantity": 3912
+      "item": "stone",
+      "quantity": 3960
     }
   ]
 }
