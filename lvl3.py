@@ -117,12 +117,12 @@ def build_actions(adj):
     yld = NODES[target_node]["yield"]
     gather_time = NODES[target_node]["gather-time"]
 
-    # Get paths
+
     path_to_node, d_to_node = shortest_path(adj, STARTING_TOWN, target_node)
     path_to_town, d_to_town = shortest_path(adj, target_node, sell_town)
 
-    # Calculate how many gathers we can do
-    overhead = d_to_node + d_to_town + 1  # +1 for sell
+
+    overhead = d_to_node + d_to_town + 1 
     max_gathers = (TOTAL_TICKS - overhead) // gather_time
     
     print(f"\nBest node: {target_node} ({resource}, {rate:.2f} Enteloot/tick)")
@@ -131,22 +131,19 @@ def build_actions(adj):
     print(f"Travel overhead: {overhead} ticks")
     print(f"Planned gathers: {max_gathers} ({max_gathers * yld} {resource})")
 
-    # Build actions
+    # build actions
     actions = []
     
-    # Travel to node
     for i in range(len(path_to_node) - 1):
         actions.append({"type": "travel", "destination": path_to_node[i + 1]})
     
-    # Gather
     for _ in range(max_gathers):
         actions.append({"type": "gather"})
     
-    # Travel to sell town
+    # travel to sell town
     for i in range(len(path_to_town) - 1):
         actions.append({"type": "travel", "destination": path_to_town[i + 1]})
     
-    # Sell
     actions.append({"type": "sell", "item": resource, "quantity": max_gathers * yld})
 
     return actions
@@ -198,7 +195,6 @@ def simulate(actions, adj):
             tick += info["gather-time"]
             resource = info["resource"]
             inventory[resource] = inventory.get(resource, 0) + info["yield"]
-            # print(f"  Gathered {info['yield']} {resource} at tick {tick}")
 
         elif a_type == "sell":
             item = action.get("item")
@@ -209,7 +205,6 @@ def simulate(actions, adj):
                 continue
                 
             if inventory.get(item, 0) < qty:
-                # Sell what we have
                 qty = inventory.get(item, 0)
                 if qty == 0:
                     tick = min(tick + 1, TOTAL_TICKS)
@@ -228,16 +223,13 @@ def simulate(actions, adj):
 
     print(f"Simulation ended at tick {tick}")
     
-    # Passive production
     passive_resources = {}
     passive_enteloot = 0
     
     for town_name, town_info in TOWNS.items():
-        # Enteloot
         cycles = tick // town_info["enteloot"]["rate"]
         passive_enteloot += cycles * town_info["enteloot"]["amount"]
         
-        # Resources
         prod_cycles = tick // town_info["production"]["rate"]
         for res, amt in town_info["production"]["resources"].items():
             passive_resources[res] = passive_resources.get(res, 0) + prod_cycles * amt
@@ -261,20 +253,18 @@ def main():
 
     graph = build_graph()
     action_list = build_actions(graph)
-    
     if not action_list:
         print("No actions generated!")
         return
         
     result = simulate(action_list, graph)
 
-    # Calculate final totals
+
     held_value = 0
     for resource, qty in result["passive_resources"].items():
         if resource in RESOURCE_PRICES:
             held_value += qty * RESOURCE_PRICES[resource]["sell_price"]
             
-    # Also add remaining inventory value
     for resource, qty in result["inventory"].items():
         if resource in RESOURCE_PRICES and qty > 0:
             held_value += qty * RESOURCE_PRICES[resource]["sell_price"]
