@@ -1480,13 +1480,17 @@
       "type": "gather"
     },
     {
-      "type": "gather"
+      "type": "travel",
+      "destination": "N2"
     },
     {
-      "type": "gather"
+      "type": "travel",
+      "destination": "Piltover"
     },
     {
-      "type": "gather"
+      "type": "sell",
+      "item": "sheep",
+      "quantity": 3912
     }
   ]
 }
