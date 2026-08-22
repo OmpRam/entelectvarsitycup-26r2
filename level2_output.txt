@@ -6,4393 +6,7 @@
     },
     {
       "type": "travel",
-      "destination": "N2"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
-    },
-    {
-      "type": "gather"
+      "destination": "N14"
     },
     {
       "type": "gather"
@@ -4414,34 +28,1877 @@
       "destination": "Shurima"
     },
     {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
       "type": "craft",
-      "item": "stone-works",
-      "quantity": 2053
+      "item": "furniture",
+      "quantity": 20
     },
     {
       "type": "travel",
-      "destination": "Ixtal"
+      "destination": "N2"
     },
     {
       "type": "travel",
-      "destination": "Ionia"
+      "destination": "Shurima"
     },
     {
       "type": "travel",
-      "destination": "Piltover"
-    },
-    {
-      "type": "travel",
-      "destination": "N1"
-    },
-    {
-      "type": "travel",
-      "destination": "Zaun"
+      "destination": "Freljord"
     },
     {
       "type": "sell",
-      "item": "stone-works",
-      "quantity": 2053
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N14"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "travel",
+      "destination": "N11"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "gather"
+    },
+    {
+      "type": "travel",
+      "destination": "Bilgewater"
+    },
+    {
+      "type": "craft",
+      "item": "furniture",
+      "quantity": 20
+    },
+    {
+      "type": "travel",
+      "destination": "N2"
+    },
+    {
+      "type": "travel",
+      "destination": "Shurima"
+    },
+    {
+      "type": "travel",
+      "destination": "Freljord"
+    },
+    {
+      "type": "sell",
+      "item": "furniture",
+      "quantity": 20
     }
   ]
 }

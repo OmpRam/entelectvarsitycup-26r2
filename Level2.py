@@ -4,6 +4,8 @@ import math
 from copy import deepcopy
 from collections import defaultdict
 
+# heuristic method
+
 with open("2.txt", encoding="utf-8") as file:
     data = json.load(file)
 
