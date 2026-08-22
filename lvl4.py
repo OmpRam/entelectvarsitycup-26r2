@@ -24,11 +24,8 @@ UPGRADES = resources['upgrades']
 CRAFT_TIME_BASE = resources['constants']['craft_time_base']
 CRAFT_TIME_AFFINITY = resources['constants']['craft_time_affinity']
 
-# ==================== GRAPH BUILDING ====================
-
-
+# ==================== GRAPH ====================
 def build_graph():
-    """Build adjacency with standard and fast edges."""
     graph = {}
     for route in ROUTES:
         a, b = route["between"]
@@ -38,14 +35,11 @@ def build_graph():
             graph[a] = {}
         if b not in graph:
             graph[b] = {}
-        # Store both standard and fast if fast exists
         if b not in graph[a]:
             graph[a][b] = {"standard": w, "fast": None, "toll": 0}
         else:
-            # This is a fast route (duplicate edge with toll)
             graph[a][b]["fast"] = w
             graph[a][b]["toll"] = toll
-        # Symmetric
         if a not in graph[b]:
             graph[b][a] = {"standard": w, "fast": None, "toll": 0}
         else:
@@ -53,14 +47,7 @@ def build_graph():
             graph[b][a]["toll"] = toll
     return graph
 
-# ==================== DIJKSTRA WITH FAST ROUTES ====================
-
-
-def dijkstra(graph, src, use_fast=False, value_per_tick=1.0):
-    """
-    Dijkstra with edge cost = time + toll / value_per_tick
-    (converts toll to time cost).
-    """
+def dijkstra_time_toll(graph, src):
     dist = {v: math.inf for v in graph}
     prev = {v: None for v in graph}
     dist[src] = 0
@@ -70,109 +57,68 @@ def dijkstra(graph, src, use_fast=False, value_per_tick=1.0):
         if d > dist[u]:
             continue
         for v, edge in graph[u].items():
-            if use_fast and edge["fast"] is not None:
+            # Always use fast if available (tolls are worth it for time savings)
+            if edge["fast"] is not None:
                 time = edge["fast"]
                 toll = edge["toll"]
             else:
                 time = edge["standard"]
                 toll = 0
-            cost = time + toll / value_per_tick
-            nd = d + cost
+            nd = d + time
             if nd < dist[v]:
                 dist[v] = nd
                 prev[v] = u
                 heapq.heappush(pq, (nd, v))
     return dist, prev
 
-
-def shortest_path(graph, src, dst, use_fast=False, value_per_tick=1.0):
-    dist, prev = dijkstra(graph, src, use_fast, value_per_tick)
+def get_path_time_toll(graph, src, dst):
+    dist, prev = dijkstra_time_toll(graph, src)
     if dist[dst] == math.inf:
-        return None, None
+        return None, None, None
     path = [dst]
     while path[-1] != src:
         path.append(prev[path[-1]])
     path.reverse()
-    # Recalculate actual time and toll for the path
     total_time = 0
     total_toll = 0
     for i in range(len(path)-1):
         a, b = path[i], path[i+1]
         edge = graph[a][b]
-        if use_fast and edge["fast"] is not None:
+        if edge["fast"] is not None:
             total_time += edge["fast"]
             total_toll += edge["toll"]
         else:
             total_time += edge["standard"]
     return path, total_time, total_toll
 
-# ==================== VALUE PER TICK ESTIMATION ====================
+# Precompute shortest paths between all towns and nodes
+def precompute_distances(graph):
+    all_vertices = list(graph.keys())
+    time_matrix = {v: {} for v in all_vertices}
+    toll_matrix = {v: {} for v in all_vertices}
+    for src in all_vertices:
+        dist, prev = dijkstra_time_toll(graph, src)
+        for dst in all_vertices:
+            if dist[dst] == math.inf:
+                continue
+            time_matrix[src][dst] = dist[dst]
+            # reconstruct path for toll
+            path = [dst]
+            while path[-1] != src:
+                path.append(prev[path[-1]])
+            path.reverse()
+            toll = 0
+            for i in range(len(path)-1):
+                a, b = path[i], path[i+1]
+                edge = graph[a][b]
+                if edge["fast"] is not None:
+                    toll += edge["toll"]
+            toll_matrix[src][dst] = toll
+    return time_matrix, toll_matrix
 
-
-def estimate_value_per_tick():
-    """Estimate max enteloot per tick from gathering/crafting."""
-    best = 0
-    # Consider raw gathering
-    for node_id, info in NODES.items():
-        resource = info["resource"]
-        sell = RESOURCE_PRICES[resource]["sell_price"]
-        value = info["yield"] * sell / info["gather-time"]
-        best = max(best, value)
-    # Consider crafting (simple single-resource recipes)
-    for item, recipe in RECIPES.items():
-        if not recipe.get("sellable", False):
-            continue
-        if len(recipe["inputs"]) != 1:
-            continue
-        res, qty = next(iter(recipe["inputs"].items()))
-        # find best node for that resource
-        node_info = max(
-            (n for n in NODES.values() if n["resource"] == res),
-            key=lambda n: n["yield"] / n["gather-time"],
-            default=None
-        )
-        if node_info is None:
-            continue
-        # craft time (assume affinity town)
-        craft_time = CRAFT_TIME_AFFINITY  # best case
-        gather_time_per_unit = node_info["gather-time"] / node_info["yield"]
-        total_time_per_item = gather_time_per_unit * qty + craft_time
-        # find best sell price
-        sell_price = max(TOWNS[t]["item-rates"].get(item, 0) for t in TOWNS)
-        if sell_price > 0:
-            value = sell_price / total_time_per_item
-            best = max(best, value)
-    # Also consider multi-resource recipes (approximate)
-    for item, recipe in RECIPES.items():
-        if not recipe.get("sellable", False):
-            continue
-        if len(recipe["inputs"]) == 1:
-            continue
-        total_time = 0
-        for res, qty in recipe["inputs"].items():
-            node_info = max(
-                (n for n in NODES.values() if n["resource"] == res),
-                key=lambda n: n["yield"] / n["gather-time"],
-                default=None
-            )
-            if node_info is None:
-                total_time = None
-                break
-            total_time += (node_info["gather-time"] / node_info["yield"]) * qty
-        if total_time is None:
-            continue
-        total_time += CRAFT_TIME_AFFINITY  # assume affinity
-        sell_price = max(TOWNS[t]["item-rates"].get(item, 0) for t in TOWNS)
-        if sell_price > 0:
-            value = sell_price / total_time
-            best = max(best, value)
-    return max(best, 1.0)  # at least 1
-
-# ==================== STATE MANAGEMENT ====================
-
-
+# ==================== STATE ====================
 class State:
-    def __init__(self):
+    def __init__(self, time_matrix, toll_matrix):
         self.location = STARTING_TOWN
         self.enteloot = STARTING_ENTELOOT
         self.inventory = {}
@@ -187,15 +133,17 @@ class State:
                 self.town_production[town][res] = 0
         self.town_enteloot = {town: 0 for town in TOWNS}
         self.graph = build_graph()
-        self.value_per_tick = estimate_value_per_tick()
-        # Keep track of boost timers (not used if we ignore upkeep)
-        self.boost_end_tick = {}  # town -> tick when boost expires
+        self.time_matrix = time_matrix
+        self.toll_matrix = toll_matrix
+        self.affinity_towns = [t for t in TOWNS if "crafting" in TOWNS[t].get("affinities", [])]
+        self.prod_upgrades = ["farmhouse", "pier", "fertilised-fields", "quarry", "woodlands", "pottery-house"]
+        self.civic_chain = ["rec-center", "fire-station", "school", "police-station", "library"]
 
-    def travel(self, dest, use_fast=False):
-        path, time, toll = shortest_path(
-            self.graph, self.location, dest, use_fast, self.value_per_tick)
-        if path is None:
+    def travel(self, dest):
+        if dest not in self.time_matrix[self.location]:
             return False
+        time = self.time_matrix[self.location][dest]
+        toll = self.toll_matrix[self.location][dest]
         if self.tick + time > TOTAL_TICKS:
             return False
         if self.enteloot < toll:
@@ -203,8 +151,7 @@ class State:
         self.tick += time
         self.enteloot -= toll
         self.location = dest
-        self.actions.append({"type": "travel", "destination": dest, "fast": use_fast} if use_fast else {
-                            "type": "travel", "destination": dest})
+        self.actions.append({"type": "travel", "destination": dest})
         self._accumulate(time)
         return True
 
@@ -225,13 +172,43 @@ class State:
         self._accumulate(gtime)
         return True
 
+    def gather_until(self, resource, amount):
+        """Gather until we have at least amount. Returns True if successful."""
+        start_amount = self.inventory.get(resource, 0)
+        gathered = start_amount
+        while gathered < amount:
+            # Find best node: max yield / (gather_time + travel_time*0.1)
+            best_node = None
+            best_score = -1
+            for nid, info in NODES.items():
+                if info["resource"] != resource:
+                    continue
+                if nid not in self.time_matrix[self.location]:
+                    continue
+                travel_time = self.time_matrix[self.location][nid]
+                score = info["yield"] / (info["gather-time"] + travel_time * 0.05)
+                if score > best_score:
+                    best_score = score
+                    best_node = nid
+            if best_node is None:
+                return False
+            self.travel(best_node)
+            # Gather until we either have enough or run out of time
+            attempts = 0
+            while self.inventory.get(resource, 0) < amount and self.tick < TOTAL_TICKS - 10:
+                if not self.gather():
+                    break
+                attempts += 1
+            if self.tick >= TOTAL_TICKS - 10:
+                break
+        return self.inventory.get(resource, 0) >= amount
+
     def craft(self, item, qty):
         if self.location not in TOWNS:
             return False
         recipe = RECIPES.get(item) or COMPONENTS.get(item)
         if recipe is None:
             return False
-        # check ingredients
         for res, amt in recipe["inputs"].items():
             if self.inventory.get(res, 0) < amt * qty:
                 return False
@@ -241,7 +218,6 @@ class State:
         total_time = craft_time * qty
         if self.tick + total_time > TOTAL_TICKS:
             return False
-        # consume
         for res, amt in recipe["inputs"].items():
             self.inventory[res] -= amt * qty
         self.inventory[item] = self.inventory.get(item, 0) + qty
@@ -257,7 +233,6 @@ class State:
             return False
         if self.tick + 1 > TOTAL_TICKS:
             return False
-        # price
         if item in RESOURCE_PRICES:
             price = RESOURCE_PRICES[item]["sell_price"]
         else:
@@ -274,7 +249,6 @@ class State:
     def build(self, upgrade_name):
         if self.location not in TOWNS:
             return False
-        # find upgrade def
         upgrade_def = None
         for cat in UPGRADES.values():
             if upgrade_name in cat:
@@ -282,23 +256,17 @@ class State:
                 break
         if upgrade_def is None:
             return False
-        # check prerequisites
         prereq = upgrade_def.get("prerequisite")
         if prereq is not None:
             if prereq == "any_prod":
-                prod_upgrades = [
-                    "farmhouse", "pier", "fertilised-fields", "quarry", "woodlands", "pottery-house"]
-                if not any(u in self.upgrades[self.location] for u in prod_upgrades):
+                if not any(u in self.upgrades[self.location] for u in self.prod_upgrades):
                     return False
             elif prereq == "two_prod":
-                prod_upgrades = [
-                    "farmhouse", "pier", "fertilised-fields", "quarry", "woodlands", "pottery-house"]
-                if sum(1 for u in self.upgrades[self.location] if u in prod_upgrades) < 2:
+                if sum(1 for u in self.upgrades[self.location] if u in self.prod_upgrades) < 2:
                     return False
             else:
                 if prereq not in self.upgrades[self.location]:
                     return False
-        # check components and enteloot
         for comp, amt in upgrade_def["components"].items():
             if self.inventory.get(comp, 0) < amt:
                 return False
@@ -307,7 +275,6 @@ class State:
         build_time = upgrade_def["build_time"]
         if self.tick + build_time > TOTAL_TICKS:
             return False
-        # consume
         for comp, amt in upgrade_def["components"].items():
             self.inventory[comp] -= amt
         self.enteloot -= upgrade_def["enteloot_cost"]
@@ -315,7 +282,6 @@ class State:
         self.upgrades[self.location].append(upgrade_name)
         self.actions.append({"type": "build", "upgrade": upgrade_name})
         self._accumulate(build_time)
-        # apply production upgrade effect (doubling) will be handled in _accumulate
         return True
 
     def craft_tool(self, tool_name):
@@ -328,19 +294,16 @@ class State:
             return False
         if tool_name == "pickaxe" and self.has_pickaxe:
             return False
-        # check inputs
         for comp, amt in tool_def["inputs"].items():
             if self.inventory.get(comp, 0) < amt:
                 return False
-        craft_time = 1 if "crafting" in TOWNS[self.location].get(
-            "affinities", []) else 2
+        craft_time = 1 if "crafting" in TOWNS[self.location].get("affinities", []) else 2
         if self.tick + craft_time > TOTAL_TICKS:
             return False
         for comp, amt in tool_def["inputs"].items():
             self.inventory[comp] -= amt
         self.tick += craft_time
-        self.actions.append(
-            {"type": "craft", "item": tool_name, "quantity": 1})
+        self.actions.append({"type": "craft", "item": tool_name, "quantity": 1})
         self._accumulate(craft_time)
         if tool_name == "boots":
             self.has_boots = True
@@ -348,28 +311,10 @@ class State:
             self.has_pickaxe = True
         return True
 
-    def upkeep(self):
-        """Perform upkeep on current town (boost enteloot)."""
-        if self.location not in TOWNS:
-            return False
-        if self.tick + 5 > TOTAL_TICKS:
-            return False
-        self.tick += 5
-        self.actions.append({"type": "upkeep"})
-        # boost effect: double enteloot production for 50 ticks (75 with fire-station)
-        duration = 75 if "fire-station" in self.upgrades[self.location] else 50
-        self.boost_end_tick[self.location] = self.tick + duration
-        # but accumulation during upkeep is already accounted? We'll handle in _accumulate with boost check.
-        self._accumulate(5)
-        return True
-
     def _accumulate(self, ticks):
-        """Accumulate passive production for all towns for given ticks."""
         for town, info in TOWNS.items():
-            # resources
             rate = info["production"]["rate"]
             for res, amt in info["production"]["resources"].items():
-                # check production upgrades
                 prod_upgrade_map = {
                     "farmhouse": "sheep",
                     "pier": "fish",
@@ -383,12 +328,9 @@ class State:
                         amt *= 2
                 cycles = ticks // rate
                 if cycles > 0:
-                    self.town_production[town][res] = self.town_production[town].get(
-                        res, 0) + cycles * amt
-            # enteloot
+                    self.town_production[town][res] = self.town_production[town].get(res, 0) + cycles * amt
             rate = info["enteloot"]["rate"]
             amount = info["enteloot"]["amount"]
-            # civic upgrades
             bonus = 0
             for u in self.upgrades[town]:
                 if u == "rec-center":
@@ -398,260 +340,300 @@ class State:
                 elif u == "library":
                     bonus += 0.5
                 elif u == "police-station":
-                    # reduce rate by 2 (min 1)
                     rate = max(1, rate - 2)
             amount = int(amount * (1 + bonus))
-            # check if town is boosted
-            if town in self.boost_end_tick and self.boost_end_tick[town] > self.tick:
-                # boost active: double amount
-                amount *= 2
             cycles = ticks // rate
             if cycles > 0:
-                self.town_enteloot[town] = self.town_enteloot.get(
-                    town, 0) + cycles * amount
+                self.town_enteloot[town] = self.town_enteloot.get(town, 0) + cycles * amount
 
-    def flush_inventory(self):
-        """Sell all inventory at nearest town."""
-        # find nearest town
+    def flush(self):
+        for town, resources_prod in self.town_production.items():
+            for res, amt in resources_prod.items():
+                if amt > 0:
+                    self.inventory[res] = self.inventory.get(res, 0) + amt
+                    self.town_production[town][res] = 0
         nearest = None
         min_dist = float('inf')
         for town in TOWNS:
-            path, time, toll = shortest_path(
-                self.graph, self.location, town, False, self.value_per_tick)
-            if path is not None and time < min_dist:
-                min_dist = time
-                nearest = town
-        if nearest is None:
-            return
-        self.travel(nearest)
-        # sell everything
+            if town in self.time_matrix[self.location]:
+                if self.time_matrix[self.location][town] < min_dist:
+                    min_dist = self.time_matrix[self.location][town]
+                    nearest = town
+        if nearest is not None:
+            self.travel(nearest)
         for item in list(self.inventory.keys()):
             qty = self.inventory.get(item, 0)
             if qty > 0:
                 self.sell(item, qty)
 
-    def get_final_enteloot(self):
-        total = self.enteloot
-        for town, amt in self.town_enteloot.items():
-            total += amt
-        return total
+    def get_total_enteloot(self):
+        return self.enteloot + sum(self.town_enteloot.values())
 
-# ==================== PLANNING FUNCTIONS ====================
-
-
-def gather_resource(state, resource, amount):
-    """Gather specified amount of resource from best node."""
-    # find best node for that resource considering distance and yield
-    candidates = []
-    for nid, info in NODES.items():
-        if info["resource"] == resource:
-            path, time, toll = shortest_path(
-                state.graph, state.location, nid, False, state.value_per_tick)
-            if path is None:
-                continue
-            # value per tick of gathering this resource
-            value = info["yield"] * \
-                RESOURCE_PRICES[resource]["sell_price"] / info["gather-time"]
-            candidates.append((nid, time, info, value))
-    if not candidates:
-        return False
-    # pick node with best value per tick considering travel overhead
-    # simple: pick node with highest value per tick
-    candidates.sort(key=lambda x: x[3], reverse=True)
-    best_node = candidates[0][0]
-    # travel there
-    if not state.travel(best_node):
-        return False
-    # gather until we have enough
-    gathered = 0
-    while state.inventory.get(resource, 0) < amount:
-        if not state.gather():
-            break
-    return True
-
-
+# ==================== BUILD HELPERS ====================
 def craft_component(state, component, qty):
     """Craft a component, gathering resources if needed."""
     recipe = COMPONENTS.get(component)
     if recipe is None:
         return False
-    # ensure we have ingredients
     for res, amt in recipe["inputs"].items():
         needed = amt * qty - state.inventory.get(res, 0)
         if needed > 0:
-            gather_resource(state, res, needed)
-    # travel to affinity town for crafting
-    affinity_town = next(
-        (t for t in TOWNS if "crafting" in TOWNS[t].get("affinities", [])), None)
-    if affinity_town is not None:
-        state.travel(affinity_town)
+            state.gather_until(res, needed)
+    # Travel to affinity town for crafting
+    if state.affinity_towns:
+        best_aff = min(state.affinity_towns, key=lambda t: state.time_matrix[state.location][t] if t in state.time_matrix[state.location] else float('inf'))
+        if state.location != best_aff:
+            state.travel(best_aff)
     return state.craft(component, qty)
 
+def build_production_upgrades(state):
+    """Build production upgrades in as many towns as possible."""
+    print("Building production upgrades...")
+    
+    # Sort towns by potential: affinity first, then enteloot rate
+    town_priority = []
+    for town in TOWNS:
+        info = TOWNS[town]
+        priority = 0
+        if "crafting" in info.get("affinities", []):
+            priority += 100
+        # Higher enteloot rate = better for civic upgrades later
+        priority += info["enteloot"]["amount"] / info["enteloot"]["rate"]
+        town_priority.append((priority, town))
+    town_priority.sort(reverse=True)
+    
+    upgrades_built = 0
+    for _, town in town_priority:
+        # Build each production upgrade in this town
+        for upgrade in state.prod_upgrades:
+            if upgrade in state.upgrades[town]:
+                continue
+            # Travel to town
+            if state.location != town:
+                state.travel(town)
+            
+            # Craft all components
+            upgrade_def = None
+            for cat in UPGRADES.values():
+                if upgrade in cat:
+                    upgrade_def = cat[upgrade]
+                    break
+            if upgrade_def is None:
+                continue
+            
+            # Gather/craft components
+            success = True
+            for comp, amt in upgrade_def["components"].items():
+                if comp in COMPONENTS:
+                    if not craft_component(state, comp, amt):
+                        success = False
+                        break
+                else:
+                    if not state.gather_until(comp, amt):
+                        success = False
+                        break
+            if not success:
+                continue
+            
+            # Build
+            if state.build(upgrade):
+                upgrades_built += 1
+                print(f"  Built {upgrade} in {town} (total: {upgrades_built})")
+                # Stop after building in enough towns (we want spread, not all in one town)
+                if upgrades_built >= 15:
+                    return
 
-def build_upgrade(state, upgrade_name, town=None):
-    """Build an upgrade, crafting components first."""
-    # find upgrade def
-    upgrade_def = None
-    for cat in UPGRADES.values():
-        if upgrade_name in cat:
-            upgrade_def = cat[upgrade_name]
-            break
-    if upgrade_def is None:
-        return False
-    # craft all components
-    for comp, amt in upgrade_def["components"].items():
-        if comp in COMPONENTS:
-            # craft it
-            craft_component(state, comp, amt)
-        else:
-            # it's a resource, gather
-            gather_resource(state, comp, amt)
-    # travel to target town if specified, else current
-    if town is not None and state.location != town:
-        state.travel(town)
-    return state.build(upgrade_name)
+def build_civic_upgrades(state):
+    """Build civic upgrades in towns with production upgrades."""
+    print("Building civic upgrades...")
+    
+    # Find towns with production upgrades
+    candidates = []
+    for town, upgrades in state.upgrades.items():
+        prod_count = sum(1 for u in upgrades if u in state.prod_upgrades)
+        if prod_count >= 1:
+            candidates.append((prod_count, town))
+    candidates.sort(reverse=True)
+    
+    civic_built = 0
+    for _, town in candidates[:5]:  # Top 5 towns
+        if state.location != town:
+            state.travel(town)
+        for upgrade in state.civic_chain:
+            if upgrade in state.upgrades[town]:
+                continue
+            # Check prerequisites
+            upgrade_def = None
+            for cat in UPGRADES.values():
+                if upgrade in cat:
+                    upgrade_def = cat[upgrade]
+                    break
+            if upgrade_def is None:
+                continue
+            
+            # Check if we can afford/build it
+            # Craft components
+            success = True
+            for comp, amt in upgrade_def["components"].items():
+                if comp in COMPONENTS:
+                    if not craft_component(state, comp, amt):
+                        success = False
+                        break
+                else:
+                    if not state.gather_until(comp, amt):
+                        success = False
+                        break
+            if not success:
+                continue
+            if state.build(upgrade):
+                civic_built += 1
+                print(f"  Built {upgrade} in {town}")
 
-
-def build_civic_chain(state, town):
-    """Build civic upgrades in a town in order."""
-    chain = ["rec-center", "fire-station",
-             "school", "police-station", "library"]
-    for upgrade in chain:
-        if upgrade in state.upgrades[town]:
+def estimate_value_per_tick():
+    """Estimate best value per tick from crafting."""
+    best = 20.0
+    for item, recipe in RECIPES.items():
+        if not recipe.get("sellable", False):
             continue
-        # build it
-        if build_upgrade(state, upgrade, town):
-            pass
-        else:
-            break
+        total_time = 0
+        for res, qty in recipe["inputs"].items():
+            node_info = max(
+                (n for n in NODES.values() if n["resource"] == res),
+                key=lambda n: n["yield"] / n["gather-time"],
+                default=None
+            )
+            if node_info is None:
+                total_time = None
+                break
+            total_time += (node_info["gather-time"] / node_info["yield"]) * qty
+        if total_time is None:
+            continue
+        total_time += CRAFT_TIME_AFFINITY
+        sell_price = max(TOWNS[t]["item-rates"].get(item, 0) for t in TOWNS)
+        if sell_price > 0:
+            best = max(best, sell_price / total_time)
+    return best
 
-# ==================== MAIN SOLVER ====================
-
-
+# ==================== MAIN ====================
 def solve():
-    state = State()
-    print(f"Value per tick estimate: {state.value_per_tick:.2f}")
-
-    # ---- PHASE 0: Gather ore for tools and police-station ----
+    print("=== ULTIMATE LEVEL 4 SOLVER ===")
+    print(f"Total ticks: {TOTAL_TICKS}")
+    
+    # Precompute distances
+    print("Building graph...")
+    graph = build_graph()
+    print("Precomputing distances...")
+    time_matrix, toll_matrix = precompute_distances(graph)
+    
+    state = State(time_matrix, toll_matrix)
+    
+    # ---- PHASE 0: Gather ore for tools ----
     print("Phase 0: Gathering ore")
-    # 4 iron-fittings for tools (2 each) + 2 for police-station (2 each)
-    total_ore_needed = 12
-    gather_resource(state, "ore", total_ore_needed)
-
+    state.gather_until("ore", 20)  # 4 fittings for tools + 6 for police-stations
+    
     # ---- PHASE 1: Craft tools ----
     print("Phase 1: Crafting tools")
-    # craft iron-fittings
-    for _ in range(4):  # need 4 for boots+pickaxe
+    for _ in range(4):
         craft_component(state, "iron-fittings", 1)
-    # craft planks and rope for tools
-    craft_component(state, "planks", 2)  # for pickaxe
-    craft_component(state, "rope", 2)    # for boots
-    # also need wood/ore for more fittings? already have.
-    # travel to affinity town
-    affinity_town = next(
-        (t for t in TOWNS if "crafting" in TOWNS[t].get("affinities", [])), "Demacia")
-    state.travel(affinity_town)
-    # craft boots
+    craft_component(state, "planks", 4)
+    craft_component(state, "rope", 4)
+    if state.affinity_towns:
+        best_aff = min(state.affinity_towns, key=lambda t: state.time_matrix[state.location][t] if t in state.time_matrix[state.location] else float('inf'))
+        state.travel(best_aff)
     state.craft_tool("boots")
-    # craft pickaxe
     state.craft_tool("pickaxe")
-
-    # ---- PHASE 2: Build production upgrades in multiple towns ----
-    print("Phase 2: Building production upgrades")
-    production_upgrades = [
-        "farmhouse", "pier", "fertilised-fields", "quarry", "woodlands", "pottery-house"]
-    # pick towns: we want to spread across towns with high resource production and affinity
-    # For simplicity, we'll pick first 6 towns with affinity or high production
-    target_towns = []
-    for town in TOWNS:
-        if "crafting" in TOWNS[town].get("affinities", []):
-            target_towns.append(town)
-    # if not enough, add others
-    if len(target_towns) < 6:
-        for town in TOWNS:
-            if town not in target_towns:
-                target_towns.append(town)
-                if len(target_towns) == 6:
-                    break
-    # build each upgrade in a different town
-    for i, upgrade in enumerate(production_upgrades):
-        town = target_towns[i % len(target_towns)]
-        build_upgrade(state, upgrade, town)
-
-    # ---- PHASE 3: Build civic upgrades in best towns ----
-    print("Phase 3: Building civic upgrades")
-    # find towns with most production upgrades (at least 1 for rec-center, 2 for fire-station)
-    # We'll pick towns that have many production upgrades and high enteloot.
-    # For simplicity, we'll pick the first town that has at least 2 prod upgrades.
-    civic_town = None
-    for town, upgrades in state.upgrades.items():
-        prod_count = sum(1 for u in upgrades if u in production_upgrades)
-        if prod_count >= 2:
-            civic_town = town
-            break
-    if civic_town is None:
-        civic_town = target_towns[0]
-    # build civic chain
-    build_civic_chain(state, civic_town)
-    # also maybe build in another town to spread development? but limited time.
-
-    # ---- PHASE 4: Craft and sell high-value goods ----
-    print("Phase 4: Crafting and selling goods")
-    # We'll iterate over towns, find best item to craft, gather resources, craft, sell.
-    # To avoid excessive actions, we'll do a limited number of cycles.
-    # For each town, we'll craft the item that sells best there.
+    
+    # ---- PHASE 2: Production upgrades in multiple towns ----
+    print("\nPhase 2: Production upgrades")
+    build_production_upgrades(state)
+    
+    # ---- PHASE 3: Civic upgrades ----
+    print("\nPhase 3: Civic upgrades")
+    build_civic_upgrades(state)
+    
+    # ---- PHASE 4: MASSIVE CRAFTING ----
+    print("\nPhase 4: Massive crafting loop")
+    
+    # Precompute best items per town
+    best_items = {}
     for town, info in TOWNS.items():
         if "item-rates" not in info:
             continue
-        # find best item
-        item_rates = info["item-rates"]
-        best_item = max(item_rates, key=item_rates.get)
-        best_price = item_rates[best_item]
-        # check if recipe exists
-        if best_item not in RECIPES:
-            continue
-        recipe = RECIPES[best_item]
-        # We'll craft 5 of them
-        qty = 5
-        # gather ingredients
-        for res, amt in recipe["inputs"].items():
-            needed = amt * qty - state.inventory.get(res, 0)
-            if needed > 0:
-                gather_resource(state, res, needed)
-        # travel to affinity town for crafting (if not already)
-        affinity_town = next(
-            (t for t in TOWNS if "crafting" in TOWNS[t].get("affinities", [])), None)
-        if affinity_town is not None and state.location != affinity_town:
-            state.travel(affinity_town)
-        # craft
-        if state.craft(best_item, qty):
-            # travel to selling town
-            state.travel(town)
-            state.sell(best_item, qty)
-        else:
-            # if craft fails, maybe gather more
-            pass
-
-    # ---- PHASE 5: Final cleanup ----
-    print("Phase 5: Final flush")
-    # collect all passive resources into inventory
-    for town, resources_prod in state.town_production.items():
-        for res, amt in resources_prod.items():
-            if amt > 0:
-                state.inventory[res] = state.inventory.get(res, 0) + amt
-                state.town_production[town][res] = 0
-    state.flush_inventory()
-
-    # ---- OUTPUT ----
-    final_enteloot = state.get_final_enteloot()
-    print(f"Final Enteloot: {final_enteloot}")
-    print(f"Total actions: {len(state.actions)}")
-    print(f"Ticks used: {state.tick}")
-
+        best_item = max(info["item-rates"], key=info["item-rates"].get)
+        if best_item in RECIPES:
+            best_items[town] = (best_item, info["item-rates"][best_item])
+    
+    sorted_towns = sorted(best_items.items(), key=lambda x: x[1][1], reverse=True)[:15]
+    
+    BATCH = 25  # Craft 25 at a time for efficiency
+    
+    iteration = 0
+    while state.tick < TOTAL_TICKS - 300:
+        for town, (item, price) in sorted_towns:
+            if state.tick >= TOTAL_TICKS - 300:
+                break
+            
+            # Travel to selling town
+            if state.location != town:
+                state.travel(town)
+            
+            recipe = RECIPES[item]
+            
+            # Gather resources for batch
+            for res, amt in recipe["inputs"].items():
+                needed = amt * BATCH
+                if state.inventory.get(res, 0) < needed:
+                    state.gather_until(res, needed - state.inventory.get(res, 0))
+            
+            # Travel to affinity town for crafting
+            if state.affinity_towns:
+                best_aff = min(state.affinity_towns, key=lambda t: state.time_matrix[state.location][t] if t in state.time_matrix[state.location] else float('inf'))
+                if state.location != best_aff:
+                    state.travel(best_aff)
+            
+            # Craft
+            if not state.craft(item, BATCH):
+                # Retry with more resources
+                for res, amt in recipe["inputs"].items():
+                    needed = amt * BATCH
+                    if state.inventory.get(res, 0) < needed:
+                        state.gather_until(res, needed - state.inventory.get(res, 0))
+                if not state.craft(item, BATCH):
+                    continue
+            
+            # Travel back to selling town
+            if state.location != town:
+                state.travel(town)
+            
+            state.sell(item, BATCH)
+            
+            iteration += 1
+            if iteration % 50 == 0:
+                print(f"  Tick {state.tick}, Enteloot: {state.enteloot}, Upgrades: {sum(len(u) for u in state.upgrades.values())}")
+    
+    # ---- PHASE 5: Final flush ----
+    print("\nPhase 5: Final flush")
+    state.flush()
+    
+    # ---- RESULTS ----
+    final = state.get_total_enteloot()
+    total_upgrades = sum(len(u) for u in state.upgrades.values())
+    towns_with_upgrades = sum(1 for u in state.upgrades.values() if u)
+    
+    print("\n" + "="*60)
+    print("FINAL RESULTS")
+    print("="*60)
+    print(f"Final Enteloot: {final:,}")
+    print(f"Ticks used: {state.tick:,}")
+    print(f"Total actions: {len(state.actions):,}")
+    print(f"Towns with upgrades: {towns_with_upgrades}")
+    print(f"Total upgrades built: {total_upgrades}")
+    print(f"Tools: Boots={state.has_boots}, Pickaxe={state.has_pickaxe}")
+    print("="*60)
+    
     with open("level4_output.txt", "w") as f:
         json.dump({"actions": state.actions}, f, indent=2)
     print("Output written to level4_output.txt")
-
 
 if __name__ == "__main__":
     solve()
