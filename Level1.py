@@ -2,22 +2,24 @@ import json
 import heapq
 import math
 
-with open("1.txt") as file:
+# loading given data into memory
+with open("1.txt") as file, open("resources.json") as resources_file:
     data = json.load(file)
+    resources = json.load(resources_file)
 
-with open("resources.json") as file:
-    resources = json.load(file)
-
+# initial data
 TOTAL_TICKS = data['run']['total_ticks']
 STARTING_TOWN = data['run']['starting_town']
 STARTING_ENTELOOT = data['run']['starting_enteloot']
 
+# json
 TOWNS = data['towns']
 NODES = data['nodes']
 ROUTES = data['routes']
 RESOURCE_PRICES = resources['resources']  
 
 
+# utils method
 def build_graph():
     adj = {}
     for route in ROUTES:
@@ -26,7 +28,6 @@ def build_graph():
         adj.setdefault(a, []).append((b, w))
         adj.setdefault(b, []).append((a, w))
     return adj
-
 
 def dijkstra(adj, src):
     dist = {v: math.inf for v in adj}
@@ -44,7 +45,6 @@ def dijkstra(adj, src):
                 prev[v] = u
                 heapq.heappush(pq, (nd, v))
     return dist, prev
-
 
 def shortest_path(adj, src, dst):
     dist, prev = dijkstra(adj, src)
