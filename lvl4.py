@@ -47,7 +47,7 @@ def build_graph():
             graph[b][a]["toll"] = toll
     return graph
 
-def dijkstra_time_toll(graph, src):
+def dijkstra(graph, src):
     dist = {v: math.inf for v in graph}
     prev = {v: None for v in graph}
     dist[src] = 0
@@ -57,13 +57,10 @@ def dijkstra_time_toll(graph, src):
         if d > dist[u]:
             continue
         for v, edge in graph[u].items():
-            # Always use fast if available (tolls are worth it for time savings)
             if edge["fast"] is not None:
                 time = edge["fast"]
-                toll = edge["toll"]
             else:
                 time = edge["standard"]
-                toll = 0
             nd = d + time
             if nd < dist[v]:
                 dist[v] = nd
@@ -71,54 +68,79 @@ def dijkstra_time_toll(graph, src):
                 heapq.heappush(pq, (nd, v))
     return dist, prev
 
-def get_path_time_toll(graph, src, dst):
-    dist, prev = dijkstra_time_toll(graph, src)
-    if dist[dst] == math.inf:
-        return None, None, None
-    path = [dst]
-    while path[-1] != src:
-        path.append(prev[path[-1]])
-    path.reverse()
-    total_time = 0
-    total_toll = 0
-    for i in range(len(path)-1):
-        a, b = path[i], path[i+1]
-        edge = graph[a][b]
-        if edge["fast"] is not None:
-            total_time += edge["fast"]
-            total_toll += edge["toll"]
-        else:
-            total_time += edge["standard"]
-    return path, total_time, total_toll
-
-# Precompute shortest paths between all towns and nodes
-def precompute_distances(graph):
-    all_vertices = list(graph.keys())
-    time_matrix = {v: {} for v in all_vertices}
-    toll_matrix = {v: {} for v in all_vertices}
-    for src in all_vertices:
-        dist, prev = dijkstra_time_toll(graph, src)
-        for dst in all_vertices:
-            if dist[dst] == math.inf:
-                continue
-            time_matrix[src][dst] = dist[dst]
-            # reconstruct path for toll
-            path = [dst]
-            while path[-1] != src:
-                path.append(prev[path[-1]])
-            path.reverse()
-            toll = 0
-            for i in range(len(path)-1):
-                a, b = path[i], path[i+1]
-                edge = graph[a][b]
-                if edge["fast"] is not None:
-                    toll += edge["toll"]
-            toll_matrix[src][dst] = toll
-    return time_matrix, toll_matrix
+def compute_distances(graph):
+    town_names = list(TOWNS.keys())
+    node_names = list(NODES.keys())
+    
+    town_dist = {t: {} for t in town_names}
+    town_toll = {t: {} for t in town_names}
+    
+    for src in town_names:
+        dist, prev = dijkstra(graph, src)
+        for dst in town_names:
+            if dst in dist and dist[dst] != math.inf:
+                town_dist[src][dst] = dist[dst]
+                path = [dst]
+                while path[-1] != src:
+                    path.append(prev[path[-1]])
+                path.reverse()
+                toll = 0
+                for i in range(len(path)-1):
+                    a, b = path[i], path[i+1]
+                    edge = graph[a][b]
+                    if edge["fast"] is not None:
+                        toll += edge["toll"]
+                town_toll[src][dst] = toll
+    
+    town_to_node = {t: {} for t in town_names}
+    town_to_node_toll = {t: {} for t in town_names}
+    
+    for src in town_names:
+        dist, prev = dijkstra(graph, src)
+        for dst in node_names:
+            if dst in dist and dist[dst] != math.inf:
+                town_to_node[src][dst] = dist[dst]
+                path = [dst]
+                while path[-1] != src:
+                    path.append(prev[path[-1]])
+                path.reverse()
+                toll = 0
+                for i in range(len(path)-1):
+                    a, b = path[i], path[i+1]
+                    edge = graph[a][b]
+                    if edge["fast"] is not None:
+                        toll += edge["toll"]
+                town_to_node_toll[src][dst] = toll
+    
+    node_to_town = {n: {} for n in node_names}
+    node_to_town_toll = {n: {} for n in node_names}
+    node_dist = {n: {} for n in node_names}
+    
+    for src in node_names:
+        dist, prev = dijkstra(graph, src)
+        for dst in node_names:
+            if dst in dist and dist[dst] != math.inf:
+                node_dist[src][dst] = dist[dst]
+        for dst in town_names:
+            if dst in dist and dist[dst] != math.inf:
+                node_to_town[src][dst] = dist[dst]
+                path = [dst]
+                while path[-1] != src:
+                    path.append(prev[path[-1]])
+                path.reverse()
+                toll = 0
+                for i in range(len(path)-1):
+                    a, b = path[i], path[i+1]
+                    edge = graph[a][b]
+                    if edge["fast"] is not None:
+                        toll += edge["toll"]
+                node_to_town_toll[src][dst] = toll
+    
+    return town_dist, town_toll, town_to_node, town_to_node_toll, node_to_town, node_to_town_toll, node_dist
 
 # ==================== STATE ====================
 class State:
-    def __init__(self, time_matrix, toll_matrix):
+    def __init__(self, town_dist, town_toll, town_to_node, town_to_node_toll, node_to_town, node_to_town_toll, node_dist):
         self.location = STARTING_TOWN
         self.enteloot = STARTING_ENTELOOT
         self.inventory = {}
@@ -133,17 +155,26 @@ class State:
                 self.town_production[town][res] = 0
         self.town_enteloot = {town: 0 for town in TOWNS}
         self.graph = build_graph()
-        self.time_matrix = time_matrix
-        self.toll_matrix = toll_matrix
+        self.town_dist = town_dist
+        self.town_toll = town_toll
+        self.town_to_node = town_to_node
+        self.town_to_node_toll = town_to_node_toll
+        self.node_to_town = node_to_town
+        self.node_to_town_toll = node_to_town_toll
+        self.node_dist = node_dist
         self.affinity_towns = [t for t in TOWNS if "crafting" in TOWNS[t].get("affinities", [])]
         self.prod_upgrades = ["farmhouse", "pier", "fertilised-fields", "quarry", "woodlands", "pottery-house"]
         self.civic_chain = ["rec-center", "fire-station", "school", "police-station", "library"]
 
-    def travel(self, dest):
-        if dest not in self.time_matrix[self.location]:
+    def travel_town(self, dest):
+        if self.location in self.town_dist and dest in self.town_dist[self.location]:
+            time = self.town_dist[self.location][dest]
+            toll = self.town_toll[self.location][dest]
+        elif self.location in self.node_to_town and dest in self.node_to_town[self.location]:
+            time = self.node_to_town[self.location][dest]
+            toll = self.node_to_town_toll[self.location][dest]
+        else:
             return False
-        time = self.time_matrix[self.location][dest]
-        toll = self.toll_matrix[self.location][dest]
         if self.tick + time > TOTAL_TICKS:
             return False
         if self.enteloot < toll:
@@ -154,6 +185,33 @@ class State:
         self.actions.append({"type": "travel", "destination": dest})
         self._accumulate(time)
         return True
+
+    def travel_node(self, dest):
+        if self.location in self.town_to_node and dest in self.town_to_node[self.location]:
+            time = self.town_to_node[self.location][dest]
+            toll = self.town_to_node_toll[self.location][dest]
+        elif self.location in self.node_dist and dest in self.node_dist[self.location]:
+            time = self.node_dist[self.location][dest]
+            toll = 0
+        else:
+            return False
+        if self.tick + time > TOTAL_TICKS:
+            return False
+        if self.enteloot < toll:
+            return False
+        self.tick += time
+        self.enteloot -= toll
+        self.location = dest
+        self.actions.append({"type": "travel", "destination": dest})
+        self._accumulate(time)
+        return True
+
+    def travel(self, dest):
+        if dest in TOWNS:
+            return self.travel_town(dest)
+        elif dest in NODES:
+            return self.travel_node(dest)
+        return False
 
     def gather(self):
         if self.location not in NODES:
@@ -173,34 +231,48 @@ class State:
         return True
 
     def gather_until(self, resource, amount):
-        """Gather until we have at least amount. Returns True if successful."""
-        start_amount = self.inventory.get(resource, 0)
-        gathered = start_amount
-        while gathered < amount:
-            # Find best node: max yield / (gather_time + travel_time*0.1)
+        """Gather until we have at least amount."""
+        if self.inventory.get(resource, 0) >= amount:
+            return True
+        
+        # Try up to 10 times to find a good node
+        for attempt in range(10):
             best_node = None
             best_score = -1
+            
             for nid, info in NODES.items():
                 if info["resource"] != resource:
                     continue
-                if nid not in self.time_matrix[self.location]:
+                if self.location in self.town_to_node and nid in self.town_to_node[self.location]:
+                    travel_time = self.town_to_node[self.location][nid]
+                elif self.location in self.node_dist and nid in self.node_dist[self.location]:
+                    travel_time = self.node_dist[self.location][nid]
+                else:
                     continue
-                travel_time = self.time_matrix[self.location][nid]
-                score = info["yield"] / (info["gather-time"] + travel_time * 0.05)
+                # Amortize travel over 20 gathers
+                amortized_travel = travel_time / 20
+                score = info["yield"] / (info["gather-time"] + amortized_travel)
                 if score > best_score:
                     best_score = score
                     best_node = nid
+            
             if best_node is None:
                 return False
+            
             self.travel(best_node)
-            # Gather until we either have enough or run out of time
-            attempts = 0
+            
+            # Gather as much as possible
+            gather_count = 0
             while self.inventory.get(resource, 0) < amount and self.tick < TOTAL_TICKS - 10:
                 if not self.gather():
                     break
-                attempts += 1
-            if self.tick >= TOTAL_TICKS - 10:
-                break
+                gather_count += 1
+                if gather_count > 50:  # Avoid infinite loops
+                    break
+            
+            if self.inventory.get(resource, 0) >= amount:
+                return True
+        
         return self.inventory.get(resource, 0) >= amount
 
     def craft(self, item, qty):
@@ -355,9 +427,15 @@ class State:
         nearest = None
         min_dist = float('inf')
         for town in TOWNS:
-            if town in self.time_matrix[self.location]:
-                if self.time_matrix[self.location][town] < min_dist:
-                    min_dist = self.time_matrix[self.location][town]
+            if self.location in self.town_dist and town in self.town_dist[self.location]:
+                d = self.town_dist[self.location][town]
+                if d < min_dist:
+                    min_dist = d
+                    nearest = town
+            elif self.location in self.node_to_town and town in self.node_to_town[self.location]:
+                d = self.node_to_town[self.location][town]
+                if d < min_dist:
+                    min_dist = d
                     nearest = town
         if nearest is not None:
             self.travel(nearest)
@@ -369,9 +447,8 @@ class State:
     def get_total_enteloot(self):
         return self.enteloot + sum(self.town_enteloot.values())
 
-# ==================== BUILD HELPERS ====================
+# ==================== HELPERS ====================
 def craft_component(state, component, qty):
-    """Craft a component, gathering resources if needed."""
     recipe = COMPONENTS.get(component)
     if recipe is None:
         return False
@@ -379,40 +456,34 @@ def craft_component(state, component, qty):
         needed = amt * qty - state.inventory.get(res, 0)
         if needed > 0:
             state.gather_until(res, needed)
-    # Travel to affinity town for crafting
     if state.affinity_towns:
-        best_aff = min(state.affinity_towns, key=lambda t: state.time_matrix[state.location][t] if t in state.time_matrix[state.location] else float('inf'))
+        best_aff = min(state.affinity_towns, key=lambda t: state.town_dist[state.location][t] if state.location in state.town_dist and t in state.town_dist[state.location] else float('inf'))
         if state.location != best_aff:
             state.travel(best_aff)
     return state.craft(component, qty)
 
 def build_production_upgrades(state):
-    """Build production upgrades in as many towns as possible."""
     print("Building production upgrades...")
-    
-    # Sort towns by potential: affinity first, then enteloot rate
     town_priority = []
     for town in TOWNS:
         info = TOWNS[town]
         priority = 0
         if "crafting" in info.get("affinities", []):
             priority += 100
-        # Higher enteloot rate = better for civic upgrades later
         priority += info["enteloot"]["amount"] / info["enteloot"]["rate"]
         town_priority.append((priority, town))
     town_priority.sort(reverse=True)
     
     upgrades_built = 0
+    max_upgrades = 18  # Build in as many towns as possible
     for _, town in town_priority:
-        # Build each production upgrade in this town
+        if upgrades_built >= max_upgrades:
+            break
         for upgrade in state.prod_upgrades:
             if upgrade in state.upgrades[town]:
                 continue
-            # Travel to town
             if state.location != town:
                 state.travel(town)
-            
-            # Craft all components
             upgrade_def = None
             for cat in UPGRADES.values():
                 if upgrade in cat:
@@ -420,8 +491,6 @@ def build_production_upgrades(state):
                     break
             if upgrade_def is None:
                 continue
-            
-            # Gather/craft components
             success = True
             for comp, amt in upgrade_def["components"].items():
                 if comp in COMPONENTS:
@@ -434,20 +503,12 @@ def build_production_upgrades(state):
                         break
             if not success:
                 continue
-            
-            # Build
             if state.build(upgrade):
                 upgrades_built += 1
-                print(f"  Built {upgrade} in {town} (total: {upgrades_built})")
-                # Stop after building in enough towns (we want spread, not all in one town)
-                if upgrades_built >= 15:
-                    return
+                print(f"  Built {upgrade} in {town} ({upgrades_built}/{max_upgrades})")
 
 def build_civic_upgrades(state):
-    """Build civic upgrades in towns with production upgrades."""
     print("Building civic upgrades...")
-    
-    # Find towns with production upgrades
     candidates = []
     for town, upgrades in state.upgrades.items():
         prod_count = sum(1 for u in upgrades if u in state.prod_upgrades)
@@ -456,13 +517,12 @@ def build_civic_upgrades(state):
     candidates.sort(reverse=True)
     
     civic_built = 0
-    for _, town in candidates[:5]:  # Top 5 towns
+    for _, town in candidates[:8]:  # Build in up to 8 towns
         if state.location != town:
             state.travel(town)
         for upgrade in state.civic_chain:
             if upgrade in state.upgrades[town]:
                 continue
-            # Check prerequisites
             upgrade_def = None
             for cat in UPGRADES.values():
                 if upgrade in cat:
@@ -470,9 +530,6 @@ def build_civic_upgrades(state):
                     break
             if upgrade_def is None:
                 continue
-            
-            # Check if we can afford/build it
-            # Craft components
             success = True
             for comp, amt in upgrade_def["components"].items():
                 if comp in COMPONENTS:
@@ -487,63 +544,43 @@ def build_civic_upgrades(state):
                 continue
             if state.build(upgrade):
                 civic_built += 1
-                print(f"  Built {upgrade} in {town}")
-
-def estimate_value_per_tick():
-    """Estimate best value per tick from crafting."""
-    best = 20.0
-    for item, recipe in RECIPES.items():
-        if not recipe.get("sellable", False):
-            continue
-        total_time = 0
-        for res, qty in recipe["inputs"].items():
-            node_info = max(
-                (n for n in NODES.values() if n["resource"] == res),
-                key=lambda n: n["yield"] / n["gather-time"],
-                default=None
-            )
-            if node_info is None:
-                total_time = None
-                break
-            total_time += (node_info["gather-time"] / node_info["yield"]) * qty
-        if total_time is None:
-            continue
-        total_time += CRAFT_TIME_AFFINITY
-        sell_price = max(TOWNS[t]["item-rates"].get(item, 0) for t in TOWNS)
-        if sell_price > 0:
-            best = max(best, sell_price / total_time)
-    return best
+                print(f"  Built {upgrade} in {town} ({civic_built} civic upgrades)")
 
 # ==================== MAIN ====================
 def solve():
     print("=== ULTIMATE LEVEL 4 SOLVER ===")
     print(f"Total ticks: {TOTAL_TICKS}")
+    print(f"Towns: {len(TOWNS)}, Nodes: {len(NODES)}")
     
-    # Precompute distances
     print("Building graph...")
     graph = build_graph()
-    print("Precomputing distances...")
-    time_matrix, toll_matrix = precompute_distances(graph)
     
-    state = State(time_matrix, toll_matrix)
+    print("Computing distances (this may take a moment)...")
+    town_dist, town_toll, town_to_node, town_to_node_toll, node_to_town, node_to_town_toll, node_dist = compute_distances(graph)
+    print(f"  Town-to-town distances: {len(town_dist)} towns")
+    print(f"  Town-to-node distances: {len(town_to_node)} towns")
     
-    # ---- PHASE 0: Gather ore for tools ----
-    print("Phase 0: Gathering ore")
-    state.gather_until("ore", 20)  # 4 fittings for tools + 6 for police-stations
+    state = State(town_dist, town_toll, town_to_node, town_to_node_toll, node_to_town, node_to_town_toll, node_dist)
+    
+    # ---- PHASE 0: Gather ore ----
+    print("\nPhase 0: Gathering ore")
+    state.gather_until("ore", 25)  # More ore for multiple police stations
+    print(f"  Ore: {state.inventory.get('ore', 0)}")
     
     # ---- PHASE 1: Craft tools ----
-    print("Phase 1: Crafting tools")
-    for _ in range(4):
+    print("\nPhase 1: Crafting tools")
+    for i in range(4):
         craft_component(state, "iron-fittings", 1)
     craft_component(state, "planks", 4)
     craft_component(state, "rope", 4)
     if state.affinity_towns:
-        best_aff = min(state.affinity_towns, key=lambda t: state.time_matrix[state.location][t] if t in state.time_matrix[state.location] else float('inf'))
+        best_aff = min(state.affinity_towns, key=lambda t: state.town_dist[state.location][t] if state.location in state.town_dist and t in state.town_dist[state.location] else float('inf'))
         state.travel(best_aff)
     state.craft_tool("boots")
     state.craft_tool("pickaxe")
+    print("  Tools crafted!")
     
-    # ---- PHASE 2: Production upgrades in multiple towns ----
+    # ---- PHASE 2: Production upgrades ----
     print("\nPhase 2: Production upgrades")
     build_production_upgrades(state)
     
@@ -554,23 +591,27 @@ def solve():
     # ---- PHASE 4: MASSIVE CRAFTING ----
     print("\nPhase 4: Massive crafting loop")
     
-    # Precompute best items per town
     best_items = {}
     for town, info in TOWNS.items():
         if "item-rates" not in info:
             continue
         best_item = max(info["item-rates"], key=info["item-rates"].get)
-        if best_item in RECIPES:
+        if best_item in RECIPES and best_item not in COMPONENTS:
             best_items[town] = (best_item, info["item-rates"][best_item])
     
     sorted_towns = sorted(best_items.items(), key=lambda x: x[1][1], reverse=True)[:15]
+    print(f"  Using {len(sorted_towns)} towns for crafting")
     
-    BATCH = 25  # Craft 25 at a time for efficiency
+    BATCH = 40  # Larger batch for efficiency
     
     iteration = 0
-    while state.tick < TOTAL_TICKS - 300:
+    last_report = 0
+    
+    print(f"  Starting craft loop at tick {state.tick}")
+    
+    while state.tick < TOTAL_TICKS - 500:
         for town, (item, price) in sorted_towns:
-            if state.tick >= TOTAL_TICKS - 300:
+            if state.tick >= TOTAL_TICKS - 500:
                 break
             
             # Travel to selling town
@@ -579,7 +620,7 @@ def solve():
             
             recipe = RECIPES[item]
             
-            # Gather resources for batch
+            # Gather resources
             for res, amt in recipe["inputs"].items():
                 needed = amt * BATCH
                 if state.inventory.get(res, 0) < needed:
@@ -587,11 +628,11 @@ def solve():
             
             # Travel to affinity town for crafting
             if state.affinity_towns:
-                best_aff = min(state.affinity_towns, key=lambda t: state.time_matrix[state.location][t] if t in state.time_matrix[state.location] else float('inf'))
+                best_aff = min(state.affinity_towns, key=lambda t: state.town_dist[state.location][t] if state.location in state.town_dist and t in state.town_dist[state.location] else float('inf'))
                 if state.location != best_aff:
                     state.travel(best_aff)
             
-            # Craft
+            # Try crafting
             if not state.craft(item, BATCH):
                 # Retry with more resources
                 for res, amt in recipe["inputs"].items():
@@ -608,8 +649,11 @@ def solve():
             state.sell(item, BATCH)
             
             iteration += 1
-            if iteration % 50 == 0:
-                print(f"  Tick {state.tick}, Enteloot: {state.enteloot}, Upgrades: {sum(len(u) for u in state.upgrades.values())}")
+            if iteration - last_report >= 10:
+                last_report = iteration
+                total_upgrades = sum(len(u) for u in state.upgrades.values())
+                towns_with_upgrades = sum(1 for u in state.upgrades.values() if u)
+                print(f"  Tick {state.tick:>6}: Enteloot={state.enteloot:>12,}, Upgrades={total_upgrades:>2} in {towns_with_upgrades:>2} towns, Loop={iteration:>3}")
     
     # ---- PHASE 5: Final flush ----
     print("\nPhase 5: Final flush")
@@ -620,16 +664,16 @@ def solve():
     total_upgrades = sum(len(u) for u in state.upgrades.values())
     towns_with_upgrades = sum(1 for u in state.upgrades.values() if u)
     
-    print("\n" + "="*60)
+    print("\n" + "="*70)
     print("FINAL RESULTS")
-    print("="*60)
+    print("="*70)
     print(f"Final Enteloot: {final:,}")
-    print(f"Ticks used: {state.tick:,}")
+    print(f"Ticks used: {state.tick:,} / {TOTAL_TICKS:,}")
     print(f"Total actions: {len(state.actions):,}")
     print(f"Towns with upgrades: {towns_with_upgrades}")
     print(f"Total upgrades built: {total_upgrades}")
     print(f"Tools: Boots={state.has_boots}, Pickaxe={state.has_pickaxe}")
-    print("="*60)
+    print("="*70)
     
     with open("level4_output.txt", "w") as f:
         json.dump({"actions": state.actions}, f, indent=2)
