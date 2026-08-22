@@ -28,7 +28,6 @@ def build_graph():
         adj.setdefault(a, []).append((b, w))
         adj.setdefault(b, []).append((a, w))
     return adj
-
 def dijkstra(adj, src):
     dist = {v: math.inf for v in adj}
     prev = {}
@@ -45,14 +44,12 @@ def dijkstra(adj, src):
                 prev[v] = u
                 heapq.heappush(pq, (nd, v))
     return dist, prev
-
 def shortest_path(adj, src, dst):
     dist, prev = dijkstra(adj, src)
     path = [dst]
     while path[-1] != src:
         path.append(prev[path[-1]])
     return list(reversed(path)), dist[dst]
-
 
 def pick_best_node(adj):
     dist_from_start, _ = dijkstra(adj, STARTING_TOWN)
@@ -75,8 +72,6 @@ def pick_best_node(adj):
             best_town = nearest_town
 
     return best_node, best_town, best_rate
-
-
 def build_actions(adj):
     target_node, sell_town, rate = pick_best_node(adj)
     resource = NODES[target_node]["resource"]
@@ -103,7 +98,6 @@ def build_actions(adj):
     print(f"Planned gathers: {max_gathers} ({max_gathers * yld} {resource})")
 
     return actions
-
 def simulate(actions, adj):
     tick = 0
     enteloot = STARTING_ENTELOOT
@@ -121,7 +115,7 @@ def simulate(actions, adj):
             dest = action.get("destination")
             weight = next((w for nb, w in adj.get(location, []) if nb == dest), None)
             if weight is None or tick + weight > TOTAL_TICKS:
-                tick = min(tick + 1, TOTAL_TICKS)  # invalid action penalty
+                tick = min(tick + 1, TOTAL_TICKS)
                 continue
             tick += weight
             location = dest
@@ -166,10 +160,14 @@ def simulate(actions, adj):
         "passive_enteloot": passive_enteloot,
     }
 
-
-text = f"{'*'*10} STARTING DATA {'*'*10}\nTotal ticks: {TOTAL_TICKS}\nStarting town: {STARTING_TOWN}\nStarting enteloot: {STARTING_ENTELOOT}"
+text = f"{'-'*30} STARTING DATA {'-'*30}\nTotal ticks: {TOTAL_TICKS}\nStarting town: {STARTING_TOWN}\nStarting enteloot: {STARTING_ENTELOOT}"
 print(text)
 
+# 
+# while TOTAL_TICKS >= 0:
+#     try:
+
+# worker methods
 graph = build_graph()
 action_list = build_actions(graph)
 result = simulate(action_list, graph)
